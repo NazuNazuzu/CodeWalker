@@ -129,5 +129,10 @@ namespace CodeWalker.Project.Panels
         {
 
         }
+
+        private void btn_selected_ymaps_export_texture_and_xml_Click(object sender, EventArgs e)
+        {
+            // ・・・ do something
+        }
     }
 }
