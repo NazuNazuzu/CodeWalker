@@ -9930,5 +9930,44 @@ namespace CodeWalker.Project
         {
             SaveAll();
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            // Check is no null
+            if (CurrentProjectFile.YmapFiles != null) {
+
+                foreach (var ymap in CurrentProjectFile.YmapFiles)
+                {
+                    System.Diagnostics.Debug.WriteLine(ymap.ToString());
+
+                    if (ymap.AllEntities.Length > 0)
+                    {
+                        System.Diagnostics.Debug.WriteLine(ymap.AllEntities.Length);
+
+                        foreach (var entity in ymap.AllEntities)
+                        {
+                            System.Diagnostics.Debug.WriteLine("--------");
+                            System.Diagnostics.Debug.WriteLine(entity.Name);
+                            System.Diagnostics.Debug.WriteLine(entity.ParentName);
+                            System.Diagnostics.Debug.WriteLine(entity.GetType());
+                            System.Diagnostics.Debug.WriteLine("--------");
+
+                        }
+
+                    } else
+                    {
+                        System.Diagnostics.Debug.WriteLine("current entities is null.");
+                    }
+
+                    
+
+                    System.Diagnostics.Debug.WriteLine("");
+                }
+
+            }
+            else {
+                System.Diagnostics.Debug.WriteLine("current ymap file is null.");
+            }
+        }
     }
 }
